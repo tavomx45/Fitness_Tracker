@@ -71,7 +71,7 @@ Where:
 
 - Shows the accelerometer data for a heavy exercise set, where the peaks clearly identify the repetitions.
 
-!['accelerometer data']('reports/figures/Rest (A).png')
+![accelerometer data]('reports/figures/Rest (A).png')
 
 ## Feature Engineering
 
