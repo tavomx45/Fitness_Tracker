@@ -43,16 +43,15 @@ After visual inspection and iterative testing, a cutoff frequency of **1.3 Hz** 
 
 The following equation describes the transfer function of a Butterworth low-pass filter applied to the acceleration signal:
 
-\[
+$$
 H(f) = \frac{1}{\sqrt{1 + \left(\frac{f}{f_c}\right)^{2n}}}
-\]
+$$
 
 Where:
 - \( H(f) \) is the filter gain as a function of frequency.
 - \( f \) is the signal frequency.
 - \( f_c = 1.3 \, \text{Hz} \) is the cutoff frequency.
 - \( n \) is the filter order.
-
 ### Principal Component Analysis (PCA)
 
 To reduce the dimensionality of the dataset and focus on the features contributing the most to variability, a **Principal Component Analysis (PCA)** was conducted. PCA was applied to all features, excluding the target columns, to identify the components that best explained the variance in the dataset.
@@ -61,9 +60,9 @@ The results indicated that the first three principal components explained most o
 
 The explained variance for each principal component is calculated as follows:
 
-\[
+$$
 \text{Explained variance} = \frac{\lambda_i}{\sum_{j=1}^{n} \lambda_j}
-\]
+$$
 
 Where:
 - \( \lambda_i \) is the eigenvalue associated with the \(i\)-th principal component.
@@ -72,7 +71,6 @@ Where:
 
 - Shows the accelerometer data for a heavy exercise set, where the peaks clearly identify the repetitions.
 
-- **Figure 3:** Compares y-axis acceleration between medium and heavy squat sets. Medium-weight sets exhibit higher peaks, while heavy sets show deeper drops due to increased resistance.
 
 ## Feature Engineering
 
@@ -82,9 +80,9 @@ To enhance the predictive power of the dataset, additional features were derived
 
 The scalar magnitude **r** of the accelerometer and gyroscope data was calculated to provide orientation-independent data. The magnitude **r** combines the x, y, and z values, and is calculated as:
 
-\[
+$$
 r_{\text{magnitude}} = \sqrt{x^2 + y^2 + z^2}
-\]
+$$
 
 This feature offers robustness to dynamic changes in device orientation.
 
