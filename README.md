@@ -71,6 +71,7 @@ Where:
 
 - Shows the accelerometer data for a heavy exercise set, where the peaks clearly identify the repetitions.
 
+![accelerometer data](reports/figures/Rest (A).png)
 
 ## Feature Engineering
 
@@ -90,9 +91,13 @@ This feature offers robustness to dynamic changes in device orientation.
 
 Time domain features were extracted by calculating the **standard deviation (sd)** and the **mean** of all numerical features, except for target columns, over different window sizes. The standard deviation captures variation over time, while the temporal mean smooths spiky noise. After testing window sizes of 2, 4, and 6 seconds, a window size of **4 seconds** was selected for the final dataset.
 
+![time domain](reports/figures/time_domain.png)
+
 ### Frequency Domain: Fourier Transformation
 
 The frequency domain was explored using Fourier transformations. A **Fourier Transformation** was applied to windows of 4 seconds, generating features such as **maximum frequency**, **signal weighted average frequency**, and **power spectral entropy**. These features capture the periodicity in the data that may be overlooked in the time domain.
+
+
 
 ### Final Dataset
 
@@ -101,6 +106,8 @@ After feature engineering, the dataset included time and frequency domain featur
 ### Clustering
 
 To capture underlying patterns, a **k-means clustering (k=4)** was performed on the acceleration data. This method produced the best silhouette score (0.6478) compared to other clustering techniques. Clustering revealed that Cluster 1 grouped most of the bench press and overhead press exercises, while Cluster 2 contained squats and Cluster 3 captured deadlifts and rows with a perfect score.
+
+![clustering](reports/figures/clustering.png)
 
 ## Modeling
 
@@ -115,3 +122,7 @@ The dataset was split into training and testing sets based on exercise sets. Tra
 - **Regularization:** Regularization was applied to penalize more complex models, reducing overfitting. As shown in Figure 7, accuracy improved slightly with higher regularization parameters until reaching an optimal point, after which performance declined.
 
 - **Models:** A range of models were tested, including Neural Networks, Random Forests, Support Vector Machines, K-Nearest Neighbors, Decision Trees, and Naive Bayes. Grid search was performed to tune hyperparameters for each model.
+
+Final results
+
+![results](reports/figures/results.png)
